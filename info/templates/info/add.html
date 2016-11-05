@@ -14,10 +14,11 @@
 	<form method="post">
 	{% csrf_token %} 
 	{{ form.as_p }}
-	<input type="submit" value="save">
-	<button><a href="{% url 'index' %}">Cancel</a></button>
+	<input id="btnSize" type="submit" value="save">
+	<button type="button" class="btn btn-xs btn-danger"><a href="{% url 'index' %}">Cancel</a></button>
 	</form>
 	
 	
 </div>
 {% endblock %}
+
