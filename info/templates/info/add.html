@@ -3,9 +3,14 @@
 {% block title %} Add {% endblock %}
 
 {% block content %}
-<h3>Add new entries</h3>
+<h3>Add new entries</h3><br>
+<ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" ><a href="{% url 'index' %}">HOME</a></li>
+        <li role="presentation"><a href="{% url 'list' %}">LIST</a> </li>
+        <li role="presentation" class="active"><a href="{% url 'add' %}">ADD</a></li>
+      </ul>
 
-<div>
+<div><br><br><br>
 	<form method="post">
 	{% csrf_token %} 
 	{{ form.as_p }}

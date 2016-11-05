@@ -5,10 +5,13 @@
 
 {% block content %} 
 
-<h3>Welcome to the Homepage</h3>
-<nav>
-<button> <a href="{% url 'list' %}">LIST</a> </button> 
-<button><a href="{% url 'add' %}">ADD</a> </button>
-</nav>
+<h3>Welcome to the Homepage</h3> <br>
+
+	<ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="{% url 'index' %}">Home</a></li>
+        <li role="presentation"><a href="{% url 'list' %}">LIST</a> </li>
+        <li role="presentation"><a href="{% url 'add' %}">ADD</a></li>
+      </ul>
+
 
 {% endblock %}
