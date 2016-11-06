@@ -15,10 +15,12 @@
 		<p><strong>{{error_message}}</strong></p>
 	{% endif %}
 	<form method="post">
-	{% csrf_token %} 
+	{% csrf_token %} <!--  This tells django to prevent csrf attack  -->
 	{{ form.as_p }}
-	<input id="btnSize" type="submit" value="save">
+	<div id="btnSize">
+	<input type="submit" value="save">
 	<button type="button" class="btn btn-xs btn-danger"><a href="{% url 'index' %}">Cancel</a></button>
+	</div>
 	</form>
 	
 	
