@@ -20,7 +20,13 @@ def add(request):
 		form = EmailNameForm(request.POST)
 		if form.is_valid:
 			
-			form.save()
+			info = form.save(commit=False)
+
+			#clean (normalized) data
+			name = form.cleaned_data['name']
+			email = form.cleaned_data['email']
+			info.save()
+
 			return HttpResponseRedirect('/list')
 	else:
 			form = EmailNameForm() # This returns the user to the form 
